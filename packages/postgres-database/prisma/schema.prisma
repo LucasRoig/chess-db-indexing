@@ -1,0 +1,14 @@
+generator drizzle {
+  provider = "prisma-generator-drizzle"
+  output   = "../src/drizzle"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_SOURCE")
+}
+
+model Game {
+  id  Int    @id @default(autoincrement())
+  pgn String
+}
